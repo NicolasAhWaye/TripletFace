@@ -90,3 +90,7 @@ The students are asked to complete the following tasks:
 * Add inference script in order to use the final model
 * Change README.md in order to include the student choices explained and a table containing the Centroids and Thesholds for each student of the dataset with a vizualisation ( See the one above )
 * Send the github link by mail
+
+## Résultats
+Amélioration du model: nombre epoch=15, Utilisation de resnet152 à la place de resnet 18
+Centroïdes et Tresholds: je suis désolé, je n'ai pas réussis à calculer cela. Cependant, je peux vous donner l'algorithme permettant de calculer ceci
