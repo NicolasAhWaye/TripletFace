@@ -33,7 +33,7 @@ class Encoder( nn.Module ):
         """
         super( Encoder, self ).__init__( )
         self.z_size    = z_size
-        self.resnet    = models.resnet18( pretrained = True )
+        self.resnet    = models.resnet152( pretrained = True )
         self._disable_grad( )
         n_features     = self.resnet.fc.in_features
         self.resnet.fc = nn.Linear( n_features, z_size )
