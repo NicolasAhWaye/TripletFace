@@ -110,6 +110,16 @@ model.load_state_dict( weights )
 jit_model = torch.jit.trace( model, torch.rand(8, 3, 3, 3) )
 torch.jit.save( jit_model, "scriptModel.pt" )
 ```
+Accès Dataset
+
+```
+from google.colab import drive
+drive.mount('/content/drive')
+```
+Lancement du train
+```
+!cd TripletFace && python3 -m tripletface.train -s '/content/drive/My Drive/dataset' -m '/content/TripletFace'
+```
 
 Centroïdes et Tresholds: je suis désolé, je n'ai pas réussis à calculer cela. Cependant, je peux vous donner l'algorithme permettant de calculer ceci
 ```
