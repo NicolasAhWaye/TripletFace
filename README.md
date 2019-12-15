@@ -94,6 +94,6 @@ The students are asked to complete the following tasks:
 ## Résultats
 Amélioration du model: nombre epoch=15, Utilisation de resnet152 à la place de resnet 18
 
-![Visualization](visualization.png)
+![Visualization](vizualisation.png)
 
 Centroïdes et Tresholds: je suis désolé, je n'ai pas réussis à calculer cela. Cependant, je peux vous donner l'algorithme permettant de calculer ceci
