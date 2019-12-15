@@ -92,8 +92,47 @@ The students are asked to complete the following tasks:
 * Send the github link by mail
 
 ## Résultats
-Amélioration du model: nombre epoch=15, Utilisation de resnet152 à la place de resnet 18
+Amélioration du model: nombre epoch=3, Utilisation de resnet152 à la place de resnet 18
 
 ![Visualization](vizualisation.png)
 
+Code pour le JIT:
+
+```
+import torch
+import torch.nn as nn
+from TripletFace.tripletface.core.model import Encoder
+import torch
+
+model = Encoder(64)
+weights = torch.load("/content/drive/My Drive/model.pt")['model']
+model.load_state_dict( weights )
+jit_model = torch.jit.trace( model, torch.rand(8, 3, 3, 3) )
+torch.jit.save( jit_model, "scriptModel.pt" )
+```
+
 Centroïdes et Tresholds: je suis désolé, je n'ai pas réussis à calculer cela. Cependant, je peux vous donner l'algorithme permettant de calculer ceci
+```
+Calcul Centroïdes
+1.begin
+2. for each level k, 1<=k<=nombre image do
+3. 	for each node n at level k, 1<=n<=4^k-1 do
+4.		for each bin i of data at node n, 1<=i<=B do
+5.			Find (min,max) of image over all images in the data
+6.			Centroids = (min+max)/2
+7.		endfor
+8.	endfor
+9.endfor
+10.end
+Calcul Thresholds
+1.begin
+2.	for each leval k, 1<= k<=nombre image do
+3.		for each image appartenant au dataset, 1<=i<=nombre image dataset do
+4.		di= distance entre chaque centroïds
+5.		endfor
+6.	Thresholds=Max(di)
+7.	enfor
+8.end 
+
+```
+
